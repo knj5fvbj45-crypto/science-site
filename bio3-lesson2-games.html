@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ألعاب تعليمية - حيا3 الدرس 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style3.css" />
+  <style>
+    body {
+      font-family: 'Changa', sans-serif;
+      direction: rtl;
+      background-color: #f9f9ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-content {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      color: #4e6348;
+    }
+
+    .header h2 {
+      font-size: 1.5rem;
+      color: #777;
+      margin-top: 10px;
+    }
+
+    .game-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .game-box {
+      background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+      border-radius: 16px;
+      padding: 20px;
+      width: 280px;
+      text-align: center;
+      color: #2c2c2c;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 0 10px #caa0ff;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .game-box:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #d0b0ff, #a0d0ff);
+      color: white;
+    }
+
+    .back-button {
+      display: block;
+      width: fit-content;
+      margin: 40px auto 0;
+      background: #c2ffd8;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 6px #b0f0e0;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: #a0f0c0;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <main class="main-content">
+    <div class="header">
+      <h1>🎮 ألعاب تعليمية</h1>
+      <h2>أحياء 3 - الدرس 2</h2>
+    </div>
+
+    <div class="game-grid">
+      <a href="https://wordwall.net/resource/11433860/the-visit-to-egypt-paragraph" class="game-box">مطابقة مفاهيم علم البيئة</a>
+      <a href="https://phet.colorado.edu/en/simulations/gene-expression-essentials" class="game-box">محاكاة العلاقات البيئية</a>
+      <a href="#" class="game-box">لعبة تصنيف الأنظمة البيئية</a>
+      <a href="#" class="game-box">اختبار سريع في المفاهيم</a>
+    </div>
+
+    <a href="biology.html" class="back-button">⬅ العودة إلى قسم الأحياء</a>
+  </main>
+</body>
+</html>
