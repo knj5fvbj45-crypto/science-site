@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Changa', sans-serif;
+  background-color: #fdf6ff;
+  direction: rtl;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #f3e8ff;
+  padding: 20px;
+  box-shadow: 0 0 10px #e0c3fc;
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar nav a {
+  display: block;
+  margin: 15px 0;
+  text-decoration: none;
+  color: #4e6348;
+  font-size: 1.2rem;
+}
+
+.sidebar nav a:hover {
+  color:#4e6348;
+}
+
+/* Main content */
+main {
+  margin-right: 240px;
+  padding: 20px;
+  flex: 1;
+}
+
+/* Video banner */
+.header-video {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  box-shadow: 0 0 20px #e0c3fc;
+}
+
+/* Welcome section */
+.welcome-section h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #4e6348;
+  margin: 30px 0;
+  text-shadow: 0 0 12px #d8bfff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #4e6348;
+}
+.dedication {
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff8ff;
+  border: 2px solid #e0c3fc;
+  box-shadow: 0 0 10px #e0c3fc;
+  max-width: 700px;
+  border-radius: 12px;
+}
+
+.dedication h2 {
+  font-size: 2rem;
+  color:#4e6348;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px #d8bfff;
+}
+
+.dedication p {
+  font-size: 1.3rem;
+  color: #4e6348;
+  margin: 8px 0;
+}
+.contact-video {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.contact-video video {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  box-shadow: 0 0 20px #e0c3fc;
+  border-radius: 12px;
+}

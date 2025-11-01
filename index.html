@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مشروع العلوم</title>
+
+  <!-- Arabic font: Cairo -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Video Header -->
+  <header>
+    <video autoplay muted loop class="header-video">
+      <source src="greetings.mp4" type="video/mp4" />
+      متصفحك لا يدعم تشغيل الفيديو.
+    </video>
+  </header>
+
+  <!-- Welcome Link -->
+ <main>
+  <h1 class="welcome"><a href="#" onclick="openSidebar()">اهلًا و سهلًا نرحب بكم في منصة مدرسة جدحفص العلمية</a></h1>
+</main>
+
+<div id="sidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">×</a>
+  <a href="home.html">الصفحة الرئيسية</a>
+  <a href="chemistry.html">الكيمياء</a>
+  <a href="physics.html">الفيزياء</a>
+  <a href="biology.html">الأحياء</a>
+  <a href="contact.html">تواصل معنا</a>
+</div>
+
+<!-- Sidebar Script -->
+<script>
+  function openSidebar() {
+    document.getElementById("sidebar").style.width = "250px";
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar").style.width = "0";
+  }
+</script>
+</body>
+</html>

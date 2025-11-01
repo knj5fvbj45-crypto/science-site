@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قسم الكيمياء</title>
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style3.css" />
+  <style>
+body { font-family: 'Changa', sans-serif; direction: rtl; background-color: #f9f9ff; margin: 0; padding: 0; } .main-content { margin-right: 220px; padding: 20px; } .welcome { text-align: center; font-size: 2.5rem; margin: 20px 0; color: #4e6348; } .course-row { display: flex; gap: 15px; overflow-x: auto; padding: 10px; justify-content: center; } .course-box { background: linear-gradient(to right, #c2ffd8, #d0f0ff); border-radius: 20px; padding: 20px; min-width: 150px; text-align: center; cursor: pointer; box-shadow: 0 0 10px #b0f0e0; transition: transform 0.3s ease; } .course-box:hover { transform: scale(1.05); } .lessons-container { margin-top: 20px; } .lesson-box { background-color: #ffffff; border: 2px solid #d0f0ff; border-radius: 12px; padding: 15px; margin: 10px auto; max-width: 600px; position: relative; box-shadow: 0 0 8px #d0f0ff; } .lesson-box h3 { margin: 0; font-size: 1.2rem; } .arrow { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; cursor: pointer; } .categories { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 15px; } .categories a { background: linear-gradient(to right, #fceabb, #f8b500); padding: 10px 16px; border-radius: 30px; text-decoration: none; color: #333; font-weight: bold; box-shadow: 0 0 6px #f8b500; transition: all 0.3s ease; } .categories a:hover { background: #f8b500; color: white; } .sidebar { position: fixed; right: 0; top: 0; width: 200px; height: 100%; background-color: #e0f7fa; padding: 20px; box-shadow: -2px 0 5px rgba(0,0,0,0.1); } .sidebar nav a { display: block; margin: 15px 0; color: #00796b; text-decoration: none; font-weight: bold; } .header-video { width: 100%; max-height: 300px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <nav>
+      <a href="home.html">الصفحة الرئيسية</a>
+      <a href="chemistry.html">الكيمياء</a>
+      <a href="physics.html">الفيزياء</a>
+      <a href="biology.html">الأحياء</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header>
+      <video autoplay muted loop class="header-video">
+        <source src="chemistry.mp4" type="video/mp4" />
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
+    </header>
+
+    <h1 class="welcome">قسم الكيمياء</h1>
+
+    <div class="course-row">
+      <div class="course-box" onclick="toggleCourse('course1')">كيم1</div>
+      <div class="course-box" onclick="toggleCourse('course2')">كيم2</div>
+      <div class="course-box" onclick="toggleCourse('course3')">كيم3</div>
+      <div class="course-box" onclick="toggleCourse('course4')">كيم4</div>
+      <div class="course-box" onclick="toggleCourse('course5')">كيم5</div>
+    </div>
+
+    <!-- كيم1 -->
+    <div id="course1" class="lessons-container" style="display:none;">
+      <div class="lesson-box">
+        <h3>الدرس 1</h3>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="chem1-lesson1-lessons.html">📘 الدروس</a>
+          <a href="chem1-lesson1-games.html">🎮 ألعاب</a>
+          <a href="chem1-lesson1-maps.html">🗺️ خرائط</a>
+          <a href="chem1-lesson1-videos.html">🎥 فيديو</a>
+          <a href="chem1-lesson1-activities.html">📝 أنشطة</a>
+        </div>
+      </div>
+<div class="lesson-box">
+    <h3>الدرس 2</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem1-lesson2-lessons.html">📘 الدروس</a>
+      <a href="chem1-lesson2-games.html">🎮 ألعاب</a>
+      <a href="chem1-lesson2-maps.html">🗺️ خرائط</a>
+      <a href="chem1-lesson2-videos.html">🎥 فيديو</a>
+      <a href="chem1-lesson2-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 3</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem1-lesson3-lessons.html">📘 الدروس</a>
+      <a href="chem1-lesson3-games.html">🎮 ألعاب</a>
+      <a href="chem1-lesson3-maps.html">🗺️ خرائط</a>
+      <a href="chem1-lesson3-videos.html">🎥 فيديو</a>
+      <a href="chem1-lesson3-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 4</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem1-lesson4-lessons.html">📘 الدروس</a>
+      <a href="chem1-lesson4-games.html">🎮 ألعاب</a>
+      <a href="chem1-lesson4-maps.html">🗺️ خرائط</a>
+      <a href="chem1-lesson4-videos.html">🎥 فيديو</a>
+      <a href="chem1-lesson4-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 5</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem1-lesson5-lessons.html">📘 الدروس</a>
+      <a href="chem1-lesson5-games.html">🎮 ألعاب</a>
+      <a href="chem1-lesson5-maps.html">🗺️ خرائط</a>
+      <a href="chem1-lesson5-videos.html">🎥 فيديو</a>
+      <a href="chem1-lesson5-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 6</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem1-lesson6-lessons.html">📘 الدروس</a>
+      <a href="chem1-lesson6-games.html">🎮 ألعاب</a>
+      <a href="chem1-lesson6-maps.html">🗺️ خرائط</a>
+      <a href="chem1-lesson6-videos.html">🎥 فيديو</a>
+      <a href="chem1-lesson6-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 7</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem1-lesson7-lessons.html">📘 الدروس</a>
+      <a href="chem1-lesson7-games.html">🎮 ألعاب</a>
+      <a href="chem1-lesson7-maps.html">🗺️ خرائط</a>
+      <a href="chem1-lesson7-videos.html">🎥 فيديو</a>
+      <a href="chem1-lesson7-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 8</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem1-lesson8-lessons.html">📘 الدروس</a>
+      <a href="chem1-lesson8-games.html">🎮 ألعاب</a>
+      <a href="chem1-lesson8-maps.html">🗺️ خرائط</a>
+      <a href="chem1-lesson8-videos.html">🎥 فيديو</a>
+      <a href="chem1-lesson8-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 9</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem1-lesson9-lessons.html">📘 الدروس</a>
+      <a href="chem1-lesson9-games.html">🎮 ألعاب</a>
+      <a href="chem1-lesson9-maps.html">🗺️ خرائط</a>
+      <a href="chem1-lesson9-videos.html">🎥 فيديو</a>
+      <a href="chem1-lesson9-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+</div>
+
+    <!-- كيم2 -->
+    <div id="course2" class="lessons-container" style="display:none;">
+      <div class="lesson-box">
+        <h3>الدرس 1</h3>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="chem2-lesson1-lessons.html">📘 الدروس</a>
+          <a href="chem2-lesson1-games.html">🎮 ألعاب</a>
+          <a href="chem2-lesson1-maps.html">🗺️ خرائط</a>
+          <a href="chem2-lesson1-videos.html">🎥 فيديو</a>
+          <a href="chem2-lesson1-activities.html">📝 أنشطة</a>
+        </div>
+      </div>
+ <div class="lesson-box">
+    <h3>الدرس 2</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem2-lesson2-lessons.html">📘 الدروس</a>
+      <a href="chem2-lesson2-games.html">🎮 ألعاب</a>
+      <a href="chem2-lesson2-maps.html">🗺️ خرائط</a>
+      <a href="chem2-lesson2-videos.html">🎥 فيديو</a>
+      <a href="chem2-lesson2-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 3</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem2-lesson3-lessons.html">📘 الدروس</a>
+      <a href="chem2-lesson3-games.html">🎮 ألعاب</a>
+      <a href="chem2-lesson3-maps.html">🗺️ خرائط</a>
+      <a href="chem2-lesson3-videos.html">🎥 فيديو</a>
+      <a href="chem2-lesson3-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 4</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem2-lesson4-lessons.html">📘 الدروس</a>
+      <a href="chem2-lesson4-games.html">🎮 ألعاب</a>
+      <a href="chem2-lesson4-maps.html">🗺️ خرائط</a>
+      <a href="chem2-lesson4-videos.html">🎥 فيديو</a>
+      <a href="chem2-lesson4-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 5</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem2-lesson5-lessons.html">📘 الدروس</a>
+      <a href="chem2-lesson5-games.html">🎮 ألعاب</a>
+      <a href="chem2-lesson5-maps.html">🗺️ خرائط</a>
+      <a href="chem2-lesson5-videos.html">🎥 فيديو</a>
+      <a href="chem2-lesson5-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 6</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem2-lesson6-lessons.html">📘 الدروس</a>
+      <a href="chem2-lesson6-games.html">🎮 ألعاب</a>
+      <a href="chem2-lesson6-maps.html">🗺️ خرائط</a>
+      <a href="chem2-lesson6-videos.html">🎥 فيديو</a>
+      <a href="chem2-lesson6-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 7</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem2-lesson7-lessons.html">📘 الدروس</a>
+      <a href="chem2-lesson7-games.html">🎮 ألعاب</a>
+      <a href="chem2-lesson7-maps.html">🗺️ خرائط</a>
+      <a href="chem2-lesson7-videos.html">🎥 فيديو</a>
+      <a href="chem2-lesson7-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 8</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem2-lesson8-lessons.html">📘 الدروس</a>
+      <a href="chem2-lesson8-games.html">🎮 ألعاب</a>
+      <a href="chem2-lesson8-maps.html">🗺️ خرائط</a>
+      <a href="chem2-lesson8-videos.html">🎥 فيديو</a>
+      <a href="chem2-lesson8-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 9</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem2-lesson9-lessons.html">📘 الدروس</a>
+      <a href="chem2-lesson9-games.html">🎮 ألعاب</a>
+      <a href="chem2-lesson9-maps.html">🗺️ خرائط</a>
+      <a href="chem2-lesson9-videos.html">🎥 فيديو</a>
+      <a href="chem2-lesson9-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 10</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem2-lesson10-lessons.html">📘 الدروس</a>
+      <a href="chem2-lesson10-games.html">🎮 ألعاب</a>
+      <a href="chem2-lesson10-maps.html">🗺️ خرائط</a>
+      <a href="chem2-lesson10-videos.html">🎥 فيديو</a>
+      <a href="chem2-lesson10-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 11</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem2-lesson11-lessons.html">📘 الدروس</a>
+      <a href="chem2-lesson11-games.html">🎮 ألعاب</a>
+      <a href="chem2-lesson11-maps.html">🗺️ خرائط</a>
+      <a href="chem2-lesson11-videos.html">🎥 فيديو</a>
+      <a href="chem2-lesson11-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 12</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem2-lesson12-lessons.html">📘 الدروس</a>
+      <a href="chem2-lesson12-games.html">🎮 ألعاب</a>
+      <a href="chem2-lesson12-maps.html">🗺️ خرائط</a>
+      <a href="chem2-lesson12-videos.html">🎥 فيديو</a>
+      <a href="chem2-lesson12-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 13</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem2-lesson13-lessons.html">📘 الدروس</a>
+      <a href="chem2-lesson13-games.html">🎮 ألعاب</a>
+      <a href="chem2-lesson13-maps.html">🗺️ خرائط</a>
+      <a href="chem2-lesson13-videos.html">🎥 فيديو</a>
+      <a href="chem2-lesson13-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+</div>
+
+   <!-- كيم3 -->
+<div id="course3" class="lessons-container" style="display:none;">
+  <div class="lesson-box">
+    <h3>الدرس 1</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem3-lesson1-lessons.html">📘 الدروس</a>
+      <a href="chem3-lesson1-games.html">🎮 ألعاب</a>
+      <a href="chem3-lesson1-maps.html">🗺️ خرائط</a>
+      <a href="chem3-lesson1-videos.html">🎥 فيديو</a>
+      <a href="chem3-lesson1-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+   <div class="lesson-box">
+    <h3>الدرس 2</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem3-lesson2-lessons.html">📘 الدروس</a>
+      <a href="chem3-lesson2-games.html">🎮 ألعاب</a>
+      <a href="chem3-lesson2-maps.html">🗺️ خرائط</a>
+      <a href="chem3-lesson2-videos.html">🎥 فيديو</a>
+      <a href="chem3-lesson2-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+ <div class="lesson-box">
+    <h3>الدرس 3</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem3-lesson3-lessons.html">📘 الدروس</a>
+      <a href="chem3-lesson3-games.html">🎮 ألعاب</a>
+      <a href="chem3-lesson3-maps.html">🗺️ خرائط</a>
+      <a href="chem3-lesson3-videos.html">🎥 فيديو</a>
+      <a href="chem3-lesson3-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+ <div class="lesson-box">
+    <h3>الدرس 4</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem3-lesson4-lessons.html">📘 الدروس</a>
+      <a href="chem3-lesson4-games.html">🎮 ألعاب</a>
+      <a href="chem3-lesson4-maps.html">🗺️ خرائط</a>
+      <a href="chem3-lesson4-videos.html">🎥 فيديو</a>
+      <a href="chem3-lesson4-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+ <div class="lesson-box">
+    <h3>الدرس 5</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem3-lesson5-lessons.html">📘 الدروس</a>
+      <a href="chem3-lesson5-games.html">🎮 ألعاب</a>
+      <a href="chem3-lesson5-maps.html">🗺️ خرائط</a>
+      <a href="chem3-lesson5-videos.html">🎥 فيديو</a>
+      <a href="chem3-lesson5-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+ <div class="lesson-box">
+    <h3>الدرس 6</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem3-lesson6-lessons.html">📘 الدروس</a>
+      <a href="chem3-lesson6-games.html">🎮 ألعاب</a>
+      <a href="chem3-lesson6-maps.html">🗺️ خرائط</a>
+      <a href="chem3-lesson6-videos.html">🎥 فيديو</a>
+      <a href="chem3-lesson6-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+ <div class="lesson-box">
+    <h3>الدرس 7</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem3-lesson7-lessons.html">📘 الدروس</a>
+      <a href="chem3-lesson7-games.html">🎮 ألعاب</a>
+      <a href="chem3-lesson7-maps.html">🗺️ خرائط</a>
+      <a href="chem3-lesson7-videos.html">🎥 فيديو</a>
+      <a href="chem3-lesson7-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+ <div class="lesson-box">
+    <h3>الدرس 8</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem3-lesson8-lessons.html">📘 الدروس</a>
+      <a href="chem3-lesson8-games.html">🎮 ألعاب</a>
+      <a href="chem3-lesson8-maps.html">🗺️ خرائط</a>
+      <a href="chem3-lesson8-videos.html">🎥 فيديو</a>
+      <a href="chem3-lesson8-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+ <div class="lesson-box">
+    <h3>الدرس9</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem3-lesson9-lessons.html">📘 الدروس</a>
+      <a href="chem3-lesson9-games.html">🎮 ألعاب</a>
+      <a href="chem3-lesson9-maps.html">🗺️ خرائط</a>
+      <a href="chem3-lesson9-videos.html">🎥 فيديو</a>
+      <a href="chem3-lesson9-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+ <div class="lesson-box">
+    <h3>الدرس 10</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem3-lesson10-lessons.html">📘 الدروس</a>
+      <a href="chem3-lesson10-games.html">🎮 ألعاب</a>
+      <a href="chem3-lesson10-maps.html">🗺️ خرائط</a>
+      <a href="chem3-lesson10-videos.html">🎥 فيديو</a>
+      <a href="chem3-lesson10-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+ <div class="lesson-box">
+    <h3>الدرس 11</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem3-lesson11-lessons.html">📘 الدروس</a>
+      <a href="chem3-lesson11-games.html">🎮 ألعاب</a>
+      <a href="chem3-lesson11-maps.html">🗺️ خرائط</a>
+      <a href="chem3-lesson11-videos.html">🎥 فيديو</a>
+      <a href="chem3-lesson11-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+ <div class="lesson-box">
+    <h3>الدرس 12</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem3-lesson12-lessons.html">📘 الدروس</a>
+      <a href="chem3-lesson12-games.html">🎮 ألعاب</a>
+      <a href="chem3-lesson12-maps.html">🗺️ خرائط</a>
+      <a href="chem3-lesson12-videos.html">🎥 فيديو</a>
+      <a href="chem3-lesson12-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+</div>
+
+    <!-- كيم4 -->
+    <div id="course4" class="lessons-container" style="display:none;">
+      <div class="lesson-box">
+        <h3>الدرس 1</h3>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="chem4-lesson1-lessons.html">📘 الدروس</a>
+          <a href="chem4-lesson1-games.html">🎮 ألعاب</a>
+          <a href="chem4-lesson1-maps.html">🗺️ خرائط</a>
+          <a href="chem4-lesson1-videos.html">🎥 فيديو</a>
+          <a href="chem4-lesson1-activities.html">📝 أنشطة</a>
+        </div>
+      </div>
+ <div class="lesson-box">
+    <h3>الدرس 2</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson2-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson2-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson2-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson2-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson2-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 3</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson3-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson3-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson3-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson3-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson3-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 4</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson4-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson4-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson4-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson4-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson4-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 5</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson5-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson5-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson5-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson5-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson5-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 6</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson6-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson6-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson6-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson6-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson6-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 7</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson7-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson7-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson7-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson7-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson7-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 8</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson8-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson8-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson8-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson8-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson8-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 9</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson9-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson9-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson9-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson9-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson9-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 10</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson10-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson10-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson10-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson10-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson10-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 11</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson11-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson11-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson11-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson11-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson11-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 12</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson12-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson12-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson12-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson12-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson12-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 13</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson13-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson13-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson13-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson13-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson13-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 14</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson14-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson14-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson14-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson14-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson14-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 15</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson15-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson15-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson15-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson15-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson15-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 16</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson16-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson16-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson16-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson16-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson16-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 17</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem4-lesson17-lessons.html">📘 الدروس</a>
+      <a href="chem4-lesson17-games.html">🎮 ألعاب</a>
+      <a href="chem4-lesson17-maps.html">🗺️ خرائط</a>
+      <a href="chem4-lesson17-videos.html">🎥 فيديو</a>
+      <a href="chem4-lesson17-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+</div>
+       
+    <!-- كيم5 -->
+    <div id="course5" class="lessons-container" style="display:none;">
+      <div class="lesson-box">
+        <h3>الدرس 1</h3>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="chem5-lesson1-lessons.html">📘 الدروس</a>
+          <a href="chem5-lesson1-games.html">🎮 ألعاب</a>
+          <a href="chem5-lesson1-maps.html">🗺️ خرائط</a>
+          <a href="chem5-lesson1-videos.html">🎥 فيديو</a>
+          <a href="chem5-lesson1-activities.html">📝 أنشطة</a>
+        </div>
+      </div>
+<div class="lesson-box">
+    <h3>الدرس 2</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem5-lesson2-lessons.html">📘 الدروس</a>
+      <a href="chem5-lesson2-games.html">🎮 ألعاب</a>
+      <a href="chem5-lesson2-maps.html">🗺️ خرائط</a>
+      <a href="chem5-lesson2-videos.html">🎥 فيديو</a>
+      <a href="chem5-lesson2-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 3</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem5-lesson3-lessons.html">📘 الدروس</a>
+      <a href="chem5-lesson3-games.html">🎮 ألعاب</a>
+      <a href="chem5-lesson3-maps.html">🗺️ خرائط</a>
+      <a href="chem5-lesson3-videos.html">🎥 فيديو</a>
+      <a href="chem5-lesson3-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 4</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem5-lesson4-lessons.html">📘 الدروس</a>
+      <a href="chem5-lesson4-games.html">🎮 ألعاب</a>
+      <a href="chem5-lesson4-maps.html">🗺️ خرائط</a>
+      <a href="chem5-lesson4-videos.html">🎥 فيديو</a>
+      <a href="chem5-lesson4-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 5</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem5-lesson5-lessons.html">📘 الدروس</a>
+      <a href="chem5-lesson5-games.html">🎮 ألعاب</a>
+      <a href="chem5-lesson5-maps.html">🗺️ خرائط</a>
+      <a href="chem5-lesson5-videos.html">🎥 فيديو</a>
+      <a href="chem5-lesson5-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 6</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem5-lesson6-lessons.html">📘 الدروس</a>
+      <a href="chem5-lesson6-games.html">🎮 ألعاب</a>
+      <a href="chem5-lesson6-maps.html">🗺️ خرائط</a>
+      <a href="chem5-lesson6-videos.html">🎥 فيديو</a>
+      <a href="chem5-lesson6-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 7</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem5-lesson7-lessons.html">📘 الدروس</a>
+      <a href="chem5-lesson7-games.html">🎮 ألعاب</a>
+      <a href="chem5-lesson7-maps.html">🗺️ خرائط</a>
+      <a href="chem5-lesson7-videos.html">🎥 فيديو</a>
+      <a href="chem5-lesson7-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+ <h3>الدرس 8</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="chem5-lesson8-lessons.html">📘 الدروس</a>
+      <a href="chem5-lesson8-games.html">🎮 ألعاب</a>
+      <a href="chem5-lesson8-maps.html">🗺️ خرائط</a>
+      <a href="chem5-lesson8-videos.html">🎥 فيديو</a>
+      <a href="chem5-lesson8-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+</div>
+  </main>
+
+  <script>
+    function toggleCourse(id) {
+      document.querySelectorAll('.lessons-container').forEach(c => c.style.display = 'none');
+      const selected = document.getElementById(id);
+      if (selected) selected.style.display = 'block';
+    }
+
+    function toggleCategories(arrow) {
+      const categories = arrow.nextElementSibling;
+      if (categories.style.display === 'block') {
+        categories.style.display = 'none';
+        arrow.textContent = '➤';
+      } else {
+        categories.style.display = 'block';
+        arrow.textContent = '▼';
+      }
+    }
+  </script>
+</body>
+</html>
