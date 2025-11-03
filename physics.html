@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -6,48 +7,131 @@
   <title>قسم الفيزياء</title>
   <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style3.css" />
+  <style>
+    body {
+      font-family: 'Changa', sans-serif;
+      direction: rtl;
+      background-color: #f9f9ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-content {
+      margin-right: 220px;
+      padding: 20px;
+    }
+
+    .welcome {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 20px 0;
+      color: #4e6348;
+    }
+
+    .course-row {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      padding: 10px;
+      justify-content: center;
+    }
+
+    .course-box {
+      background: linear-gradient(to right, #c2ffd8, #d0f0ff);
+      border-radius: 20px;
+      padding: 20px;
+      min-width: 150px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px #b0f0e0;
+      transition: transform 0.3s ease;
+    }
+
+    .course-box:hover {
+      transform: scale(1.05);
+    }
+
+    .lessons-container {
+      margin-top: 20px;
+    }
+
+    .lesson-box {
+      background-color: #ffffff;
+      border: 2px solid #d0f0ff;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 10px auto;
+      max-width: 600px;
+      position: relative;
+      box-shadow: 0 0 8px #d0f0ff;
+    }
+
+    .lesson-box h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .arrow {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .categories a {
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      padding: 10px 16px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      box-shadow: 0 0 6px #f8b500;
+      transition: all 0.3s ease;
+    }
+
+    .categories a:hover {
+      background: #f8b500;
+      color: white;
+    }
+
+    .sidebar {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #e0f7fa;
+      padding: 20px;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    .sidebar nav a {
+      display: block;
+      margin: 15px 0;
+      color: #00796b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .header-video {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
-<script>
-  function showCourse(id) {
-    document.querySelectorAll('.course-content').forEach(course => {
-      course.style.display = 'none';
-      course.querySelectorAll('.lesson-content').forEach(lesson => {
-        lesson.style.display = 'none';
-        lesson.querySelectorAll('.category-content').forEach(cat => {
-          cat.style.display = 'none';
-        });
-      });
-    });
-    const selectedCourse = document.getElementById(id);
-    if (selectedCourse) selectedCourse.style.display = 'block';
-  }
-
-  function showLesson(id) {
-    document.querySelectorAll('.lesson-content').forEach(lesson => {
-      lesson.style.display = 'none';
-      lesson.querySelectorAll('.category-content').forEach(cat => {
-        cat.style.display = 'none';
-      });
-    });
-    const selectedLesson = document.getElementById(id);
-    if (selectedLesson) selectedLesson.style.display = 'block';
-  }
-
-  function showCategory(id) {
-    const selectedCategory = document.getElementById(id);
-    if (!selectedCategory) return;
-
-    const lessonContainer = selectedCategory.closest('.lesson-content');
-    if (!lessonContainer) return;
-
-    lessonContainer.querySelectorAll('.category-content').forEach(cat => {
-      cat.style.display = 'none';
-    });
-
-    selectedCategory.style.display = 'block';
-  }
-</script>
-
 <body>
   <aside class="sidebar">
     <nav>
@@ -69,115 +153,609 @@
 
     <h1 class="welcome">قسم الفيزياء</h1>
 
-    <section class="courses">
-      <button onclick="showCourse('phys101')">فيزياء 101</button>
-      <button onclick="showCourse('phys102')">فيزياء 102</button>
-      <button onclick="showCourse('phys103')">فيزياء 103</button>
-    </section>
+    <div class="course-row">
+      <div class="course-box" onclick="toggleCourse('course1')">فيز1</div>
+      <div class="course-box" onclick="toggleCourse('course2')">فيز2</div>
+      <div class="course-box" onclick="toggleCourse('course3')">فيز3</div>
+      <div class="course-box" onclick="toggleCourse('course4')">فيز4</div>
+      <div class="course-box" onclick="toggleCourse('course5')">فيز5</div>
+    </div>
 
-    <section id="phys101" class="course-content" style="display:none;">
-      <h2>⚛️ فيزياء 101</h2>
-      <div class="lessons">
-        <button onclick="showLesson('phys101-lesson1')">الدرس 1</button>
-        <button onclick="showLesson('phys101-lesson2')">الدرس 2</button>
-      </div>
-
-      <div id="phys101-lesson1" class="lesson-content" style="display:none;">
+    <!-- فيز1 -->
+    <div id="course1" class="lessons-container" style="display:none;">
+      <div class="lesson-box">
         <h3>الدرس 1</h3>
-        <div class="categories">
-          <button onclick="showCategory('p101l1-lessons')">الدروس</button>
-          <button onclick="showCategory('p101l1-games')">ألعاب تعليمية</button>
-          <button onclick="showCategory('p101l1-maps')">خرائط مفاهيمية</button>
-          <button onclick="showCategory('p101l1-videos')">مقاطع فيديو</button>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="phys1-lesson1-lessons.html">📘 الدروس</a>
+          <a href="phys1-lesson1-games.html">🎮 ألعاب</a>
+          <a href="phys1-lesson1-maps.html">🗺️ خرائط</a>
+          <a href="phys1-lesson1-videos.html">🎥 فيديو</a>
+          <a href="phys1-lesson1-activities.html">📝 أنشطة</a>
         </div>
-        <div id="p101l1-lessons" class="category-content">📘 محتوى الدروس هنا</div>
-        <div id="p101l1-games" class="category-content" style="display:none;">🎮 ألعاب تعليمية هنا</div>
-        <div id="p101l1-maps" class="category-content" style="display:none;">🗺️ خرائط مفاهيمية هنا</div>
-        <div id="p101l1-videos" class="category-content" style="display:none;">🎥 مقاطع فيديو هنا</div>
       </div>
-
-      <div id="phys101-lesson2" class="lesson-content" style="display:none;">
+      <div class="lesson-box">
         <h3>الدرس 2</h3>
-        <div class="categories">
-          <button onclick="showCategory('p101l2-lessons')">الدروس</button>
-          <button onclick="showCategory('p101l2-games')">ألعاب تعليمية</button>
-          <button onclick="showCategory('p101l2-maps')">خرائط مفاهيمية</button>
-          <button onclick="showCategory('p101l2-videos')">مقاطع فيديو</button>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="phys1-lesson2-lessons.html">📘 الدروس</a>
+          <a href="phys1-lesson2-games.html">🎮 ألعاب</a>
+          <a href="phys1-lesson2-maps.html">🗺️ خرائط</a>
+          <a href="phys1-lesson2-videos.html">🎥 فيديو</a>
+          <a href="phys1-lesson2-activities.html">📝 أنشطة</a>
         </div>
-        <div id="p101l2-lessons" class="category-content">📘 محتوى الدروس هنا</div>
-        <div id="p101l2-games" class="category-content" style="display:none;">🎮 ألعاب تعليمية هنا</div>
-        <div id="p101l2-maps" class="category-content" style="display:none;">🗺️ خرائط مفاهيمية هنا</div>
-        <div id="p101l2-videos" class="category-content" style="display:none;">🎥 مقاطع فيديو هنا</div>
       </div>
-    </section>
-
-    <section id="phys102" class="course-content" style="display:none;">
-      <h2>⚛️ فيزياء 102</h2>
-      <div class="lessons">
-        <button onclick="showLesson('phys102-lesson1')">الدرس 1</button>
-        <button onclick="showLesson('phys102-lesson2')">الدرس 2</button>
-      </div>
-
-      <div id="phys102-lesson1" class="lesson-content" style="display:none;">
-        <h3>الدرس 1</h3>
-        <div class="categories">
-          <button onclick="showCategory('p102l1-lessons')">الدروس</button>
-          <button onclick="showCategory('p102l1-games')">ألعاب تعليمية</button>
-          <button onclick="showCategory('p102l1-maps')">خرائط مفاهيمية</button>
-          <button onclick="showCategory('p102l1-videos')">مقاطع فيديو</button>
+      <div class="lesson-box">
+        <h3>الدرس 3</h3>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="phys1-lesson3-lessons.html">📘 الدروس</a>
+          <a href="phys1-lesson3-games.html">🎮 ألعاب</a>
+          <a href="phys1-lesson3-maps.html">🗺️ خرائط</a>
+          <a href="phys1-lesson3-videos.html">🎥 فيديو</a>
+          <a href="phys1-lesson3-activities.html">📝 أنشطة</a>
         </div>
-        <div id="p102l1-lessons" class="category-content">📘 محتوى الدروس هنا</div>
-        <div id="p102l1-games" class="category-content" style="display:none;">🎮 ألعاب تعليمية هنا</div>
-        <div id="p102l1-maps" class="category-content" style="display:none;">🗺️ خرائط مفاهيمية هنا</div>
-        <div id="p102l1-videos" class="category-content" style="display:none;">🎥 مقاطع فيديو هنا</div>
       </div>
-
-      <div id="phys102-lesson2" class="lesson-content" style="display:none;">
-        <h3>الدرس 2</h3>
-        <div class="categories">
-          <button onclick="showCategory('p102l2-lessons')">الدروس</button>
-          <button onclick="showCategory('p102l2-games')">ألعاب تعليمية</button>
-          <button onclick="showCategory('p102l2-maps')">خرائط مفاهيمية</button>
-          <button onclick="showCategory('p102l2-videos')">مقاطع فيديو</button>
+      <div class="lesson-box">
+        <h3>الدرس 4</h3>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="phys1-lesson4-lessons.html">📘 الدروس</a>
+          <a href="phys1-lesson4-games.html">🎮 ألعاب</a>
+          <a href="phys1-lesson4-maps.html">🗺️ خرائط</a>
+          <a href="phys1-lesson4-videos.html">🎥 فيديو</a>
+          <a href="phys1-lesson4-activities.html">📝 أنشطة</a>
         </div>
-        <div id="p102l2-lessons" class="category-content">📘 محتوى الدروس هنا</div>
-        <div id="p102l2-games" class="category-content" style="display:none;">🎮 ألعاب تعليمية هنا</div>
-        <div id="p102l2-maps" class="category-content" style="display:none;">🗺️ خرائط مفاهيمية هنا</div>
-        <div id="p102l2-videos" class="category-content" style="display:none;">🎥 مقاطع فيديو هنا</div>
       </div>
-    </section>
-
-    <section id="phys103" class="course-content" style="display:none;">
-      <h2>⚛️ فيزياء 103</h2>
-      <div class="lessons">
-        <button onclick="showLesson('phys103-lesson1')">الدرس 1</button>
-        <button onclick="showLesson('phys103-lesson2')">الدرس 2</button>
-      </div>
-
-      <div id="phys103-lesson1" class="lesson-content" style="display:none;">
-        <h3>الدرس 1</h3>
-        <div class="categories">
-          <button onclick="showCategory('p103l1-lessons')">الدروس</button>
-          <button onclick="showCategory('p103l1-games')">ألعاب تعليمية</button>
-          <button onclick="showCategory('p103l1-maps')">خرائط مفاهيمية</button>
-          <button onclick="showCategory('p103l1-videos')">مقاطع فيديو</button>
+      <div class="lesson-box">
+        <h3>الدرس 5</h3>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="phys1-lesson5-lessons.html">📘 الدروس</a>
+          <a href="phys1-lesson5-games.html">🎮 ألعاب</a>
+          <a href="phys1-lesson5-maps.html">🗺️ خرائط</a>
+          <a href="phys1-lesson5-videos.html">🎥 فيديو</a>
+          <a href="phys1-lesson5-activities.html">📝 أنشطة</a>
         </div>
-        <div id="p103l1-lessons" class="category-content">📘 محتوى الدروس هنا</div>
-        <div id="p103l1-games" class="category-content" style="display:none;">🎮 ألعاب تعليمية هنا</div>
-        <div id="p103l1-maps" class="category-content" style="display:none;">🗺️ خرائط مفاهيمية هنا</div>
-        <div id="p103l1-videos" class="category-content" style="display:none;">🎥 مقاطع فيديو هنا</div>
       </div>
+ <div class="lesson-box">
+        <h3>الدرس 6</h3>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="phys1-lesson6-lessons.html">📘 الدروس</a>
+          <a href="phys1-lesson6-games.html">🎮 ألعاب</a>
+          <a href="phys1-lesson6-maps.html">🗺️ خرائط</a>
+          <a href="phys1-lesson6-videos.html">🎥 فيديو</a>
+          <a href="phys1-lesson6-activities.html">📝 أنشطة</a>
+        </div>
+      </div>
+ <div class="lesson-box">
+        <h3>الدرس 7</h3>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="phys1-lesson7-lessons.html">📘 الدروس</a>
+          <a href="phys1-lesson7-games.html">🎮 ألعاب</a>
+          <a href="phys1-lesson7-maps.html">🗺️ خرائط</a>
+          <a href="phys1-lesson7-videos.html">🎥 فيديو</a>
+          <a href="phys1-lesson7-activities.html">📝 أنشطة</a>
+        </div>
+      </div>
+ <div class="lesson-box">
+        <h3>الدرس 8</h3>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="phys1-lesson8-lessons.html">📘 الدروس</a>
+          <a href="phys1-lesson8-games.html">🎮 ألعاب</a>
+          <a href="phys1-lesson8-maps.html">🗺️ خرائط</a>
+          <a href="phys1-lesson8-videos.html">🎥 فيديو</a>
+          <a href="phys1-lesson8-activities.html">📝 أنشطة</a>
+        </div>
+      </div>
+ <div class="lesson-box">
+        <h3>الدرس 9</h3>
+        <div class="arrow" onclick="toggleCategories(this)">➤</div>
+        <div class="categories" style="display:none;">
+          <a href="phys1-lesson9-lessons.html">📘 الدروس</a>
+          <a href="phys1-lesson9-games.html">🎮 ألعاب</a>
+          <a href="phys1-lesson9-maps.html">🗺️ خرائط</a>
+          <a href="phys1-lesson9-videos.html">🎥 فيديو</a>
+          <a href="phys1-lesson9-activities.html">📝 أنشطة</a>
+        </div>
+      </div>
+    </div>
 
-      <div id="phys103-lesson2" class="lesson-content" style="display:none;">
-        <h3>الدرس 2</h3>
-        <div class="categories">
-          <button onclick="showCategory('p103l2-lessons')">الدروس</button>
-          <button onclick="showCategory('p103l2-games')">ألعاب تعليمية</button>
-          <button onclick="showCategory('p103l2-maps')">خرائط مفاهيمية</button>
-          <button onclick="showCategory('p103l2-videos')">مقاطع فيديو</button>
+   <!-- فيز2 -->
+<div id="course2" class="lessons-container" style="display:none;">
+  <div class="lesson-box">
+    <h3>الدرس 1</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys2-lesson1-lessons.html">📘 الدروس</a>
+      <a href="phys2-lesson1-games.html">🎮 ألعاب</a>
+      <a href="phys2-lesson1-maps.html">🗺️ خرائط</a>
+      <a href="phys2-lesson1-videos.html">🎥 فيديو</a>
+      <a href="phys2-lesson1-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h3>الدرس 2</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys2-lesson2-lessons.html">📘 الدروس</a>
+      <a href="phys2-lesson2-games.html">🎮 ألعاب</a>
+      <a href="phys2-lesson2-maps.html">🗺️ خرائط</a>
+      <a href="phys2-lesson2-videos.html">🎥 فيديو</a>
+      <a href="phys2-lesson2-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h3>الدرس 3</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys2-lesson3-lessons.html">📘 الدروس</a>
+      <a href="phys2-lesson3-games.html">🎮 ألعاب</a>
+      <a href="phys2-lesson3-maps.html">🗺️ خرائط</a>
+      <a href="phys2-lesson3-videos.html">🎥 فيديو</a>
+      <a href="phys2-lesson3-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h3>الدرس 4</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys2-lesson4-lessons.html">📘 الدروس</a>
+      <a href="phys2-lesson4-games.html">🎮 ألعاب</a>
+      <a href="phys2-lesson4-maps.html">🗺️ خرائط</a>
+      <a href="phys2-lesson4-videos.html">🎥 فيديو</a>
+      <a href="phys2-lesson4-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h3>الدرس5</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys2-lesson5-lessons.html">📘 الدروس</a>
+      <a href="phys2-lesson5-games.html">🎮 ألعاب</a>
+      <a href="phys2-lesson5-maps.html">🗺️ خرائط</a>
+      <a href="phys2-lesson5-videos.html">🎥 فيديو</a>
+      <a href="phys2-lesson5-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h3>الدرس 6</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys2-lesson6-lessons.html">📘 الدروس</a>
+      <a href="phys2-lesson6-games.html">🎮 ألعاب</a>
+      <a href="phys2-lesson6-maps.html">🗺️ خرائط</a>
+      <a href="phys2-lesson6-videos.html">🎥 فيديو</a>
+      <a href="phys2-lesson6-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h3>الدرس 7</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys2-lesson7-lessons.html">📘 الدروس</a>
+      <a href="phys2-lesson7-games.html">🎮 ألعاب</a>
+      <a href="phys2-lesson7-maps.html">🗺️ خرائط</a>
+      <a href="phys2-lesson7-videos.html">🎥 فيديو</a>
+      <a href="phys2-lesson7-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h3>الدرس 8</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys2-lesson8-lessons.html">📘 الدروس</a>
+      <a href="phys2-lesson8-games.html">🎮 ألعاب</a>
+      <a href="phys2-lesson8-maps.html">🗺️ خرائط</a>
+      <a href="phys2-lesson8-videos.html">🎥 فيديو</a>
+      <a href="phys2-lesson8-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h3>الدرس 9</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys2-lesson9-lessons.html">📘 الدروس</a>
+      <a href="phys2-lesson9-games.html">🎮 ألعاب</a>
+      <a href="phys2-lesson9-maps.html">🗺️ خرائط</a>
+      <a href="phys2-lesson9-videos.html">🎥 فيديو</a>
+      <a href="phys2-lesson9-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+ <div class="lesson-box">
+    <h3>الدرس 10</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys2-lesson10-lessons.html">📘 الدروس</a>
+      <a href="phys2-lesson10games.html">🎮 ألعاب</a>
+      <a href="phys2-lesson10-maps.html">🗺️ خرائط</a>
+      <a href="phys2-lesson10-videos.html">🎥 فيديو</a>
+      <a href="phys2-lesson10-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+ <div class="lesson-box">
+    <h3>الدرس 11</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys2-lesson11-lessons.html">📘 الدروس</a>
+      <a href="phys2-lesson11-games.html">🎮 ألعاب</a>
+      <a href="phys2-lesson11-maps.html">🗺️ خرائط</a>
+      <a href="phys2-lesson11-videos.html">🎥 فيديو</a>
+      <a href="phys2-lesson11-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
 </div>
-        <div id="p103l2-lessons" class="category-content">📘 محتوى الدروس هنا</div>
-        <div id="p103l2-games" class="category-content" style="display:none;">🎮 ألعاب تعليمية هنا</div>
-        <div id="p103l2-maps" class="category-content" style="display:none;">🗺️ خرائط مفاهيمية هنا</div>
-        <div id="p103l2-videos" class="category-content" style="display:none;">🎥 مقاطع فيديو هنا</div>
-      </div>
+
+<div id="course3" class="lessons-container" style="display:none;">
+  <div class="lesson-box">
+    <h3>الدرس 1</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys3-lesson1-lessons.html">📘 الدروس</a>
+      <a href="phys3-lesson1-games.html">🎮 ألعاب</a>
+      <a href="phys3-lesson1-maps.html">🗺️ خرائط</a>
+      <a href="phys3-lesson1-videos.html">🎥 فيديو</a>
+      <a href="phys3-lesson1-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 2</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys3-lesson2-lessons.html">📘 الدروس</a>
+      <a href="phys3-lesson2-games.html">🎮 ألعاب</a>
+      <a href="phys3-lesson2-maps.html">🗺️ خرائط</a>
+      <a href="phys3-lesson2-videos.html">🎥 فيديو</a>
+      <a href="phys3-lesson2-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 3</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys3-lesson3-lessons.html">📘 الدروس</a>
+      <a href="phys3-lesson3-games.html">🎮 ألعاب</a>
+      <a href="phys3-lesson3-maps.html">🗺️ خرائط</a>
+      <a href="phys3-lesson3-videos.html">🎥 فيديو</a>
+      <a href="phys3-lesson3-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 4</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys3-lesson4-lessons.html">📘 الدروس</a>
+      <a href="phys3-lesson4-games.html">🎮 ألعاب</a>
+      <a href="phys3-lesson4-maps.html">🗺️ خرائط</a>
+      <a href="phys3-lesson4-videos.html">🎥 فيديو</a>
+      <a href="phys3-lesson4-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 5</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys3-lesson5-lessons.html">📘 الدروس</a>
+      <a href="phys3-lesson5-games.html">🎮 ألعاب</a>
+      <a href="phys3-lesson5-maps.html">🗺️ خرائط</a>
+      <a href="phys3-lesson5-videos.html">🎥 فيديو</a>
+      <a href="phys3-lesson5-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 6</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys3-lesson6-lessons.html">📘 الدروس</a>
+      <a href="phys3-lesson6-games.html">🎮 ألعاب</a>
+      <a href="phys3-lesson6-maps.html">🗺️ خرائط</a>
+      <a href="phys3-lesson6-videos.html">🎥 فيديو</a>
+      <a href="phys3-lesson6-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس7</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys3-lesson7-lessons.html">📘 الدروس</a>
+      <a href="phys3-lesson7-games.html">🎮 ألعاب</a>
+      <a href="phys3-lesson7-maps.html">🗺️ خرائط</a>
+      <a href="phys3-lesson7-videos.html">🎥 فيديو</a>
+      <a href="phys3-lesson7-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 8</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys3-lesson8-lessons.html">📘 الدروس</a>
+      <a href="phys3-lesson8-games.html">🎮 ألعاب</a>
+      <a href="phys3-lesson8-maps.html">🗺️ خرائط</a>
+      <a href="phys3-lesson8-videos.html">🎥 فيديو</a>
+      <a href="phys3-lesson8-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 9</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys3-lesson9-lessons.html">📘 الدروس</a>
+      <a href="phys3-lesson9-games.html">🎮 ألعاب</a>
+      <a href="phys3-lesson9-maps.html">🗺️ خرائط</a>
+      <a href="phys3-lesson9-videos.html">🎥 فيديو</a>
+      <a href="phys3-lesson9-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 10</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys3-lesson10-lessons.html">📘 الدروس</a>
+      <a href="phys3-lesson10-games.html">🎮 ألعاب</a>
+      <a href="phys3-lesson10-maps.html">🗺️ خرائط</a>
+      <a href="phys3-lesson10-videos.html">🎥 فيديو</a>
+      <a href="phys3-lesson10-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  </div>
+
+<div id="course4" class="lessons-container" style="display:none;">
+  <div class="lesson-box">
+    <h3>الدرس 1</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys4-lesson1-lessons.html">📘 الدروس</a>
+      <a href="phys4-lesson1-games.html">🎮 ألعاب</a>
+      <a href="phys4-lesson1-maps.html">🗺️ خرائط</a>
+      <a href="phys4-lesson1-videos.html">🎥 فيديو</a>
+      <a href="phys4-lesson1-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 2</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys4-lesson2-lessons.html">📘 الدروس</a>
+      <a href="phys4-lesson2-games.html">🎮 ألعاب</a>
+      <a href="phys4-lesson2-maps.html">🗺️ خرائط</a>
+      <a href="phys4-lesson2-videos.html">🎥 فيديو</a>
+      <a href="phys4-lesson2-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 3</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys4-lesson3-lessons.html">📘 الدروس</a>
+      <a href="phys4-lesson3-games.html">🎮 ألعاب</a>
+      <a href="phys4-lesson3-maps.html">🗺️ خرائط</a>
+      <a href="phys4-lesson3-videos.html">🎥 فيديو</a>
+      <a href="phys4-lesson3-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 4</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys4-lesson4-lessons.html">📘 الدروس</a>
+      <a href="phys4-lesson4-games.html">🎮 ألعاب</a>
+      <a href="phys4-lesson4-maps.html">🗺️ خرائط</a>
+      <a href="phys4-lesson4-videos.html">🎥 فيديو</a>
+      <a href="phys4-lesson4-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h3>الدرس 5</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys4-lesson5-lessons.html">📘 الدروس</a>
+      <a href="phys4-lesson5-games.html">🎮 ألعاب</a>
+      <a href="phys4-lesson5-maps.html">🗺️ خرائط</a>
+      <a href="phys4-lesson5-videos.html">🎥 فيديو</a>
+      <a href="phys4-lesson5-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس6</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys4-lesson6-lessons.html">📘 الدروس</a>
+      <a href="phys4-lesson6-games.html">🎮 ألعاب</a>
+      <a href="phys4-lesson6-maps.html">🗺️ خرائط</a>
+      <a href="phys4-lesson6-videos.html">🎥 فيديو</a>
+      <a href="phys4-lesson6-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 7</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys4-lesson7-lessons.html">📘 الدروس</a>
+      <a href="phys4-lesson7-games.html">🎮 ألعاب</a>
+      <a href="phys4-lesson7-maps.html">🗺️ خرائط</a>
+      <a href="phys4-lesson7-videos.html">🎥 فيديو</a>
+      <a href="phys4-lesson7-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 8</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys4-lesson8-lessons.html">📘 الدروس</a>
+      <a href="phys4-lesson8-games.html">🎮 ألعاب</a>
+      <a href="phys4-lesson8-maps.html">🗺️ خرائط</a>
+      <a href="phys4-lesson8-videos.html">🎥 فيديو</a>
+      <a href="phys4-lesson8-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 9</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys4-lesson9-lessons.html">📘 الدروس</a>
+      <a href="phys4-lesson9-games.html">🎮 ألعاب</a>
+      <a href="phys4-lesson9-maps.html">🗺️ خرائط</a>
+      <a href="phys4-lesson9-videos.html">🎥 فيديو</a>
+      <a href="phys4-lesson9-activities.html">📝 أنشطة</a>
+    </div>
+<div class="lesson-box">
+    <h3>الدرس 10 /h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys4-lesson10-lessons.html">📘 الدروس</a>
+      <a href="phys4-lesson10-games.html">🎮 ألعاب</a>
+      <a href="phys4-lesson10-maps.html">🗺️ خرائط</a>
+      <a href="phys4-lesson10-videos.html">🎥 فيديو</a>
+      <a href="phys4-lesson10-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+</div>
+
+<div id="course5" class="lessons-container" style="display:none;">
+  <div class="lesson-box">
+    <h3>الدرس 1</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys5-lesson1-lessons.html">📘 الدروس</a>
+      <a href="phys5-lesson1-games.html">🎮 ألعاب</a>
+      <a href="phys5-lesson1-maps.html">🗺️ خرائط</a>
+      <a href="phys5-lesson1-videos.html">🎥 فيديو</a>
+      <a href="phys5-lesson1-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 2</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys5-lesson2-lessons.html">📘 الدروس</a>
+      <a href="phys5-lesson2-games.html">🎮 ألعاب</a>
+      <a href="phys5-lesson2-maps.html">🗺️ خرائط</a>
+      <a href="phys5-lesson2-videos.html">🎥 فيديو</a>
+      <a href="phys5-lesson2-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 3</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys5-lesson3-lessons.html">📘 الدروس</a>
+      <a href="phys5-lesson3-games.html">🎮 ألعاب</a>
+      <a href="phys5-lesson3-maps.html">🗺️ خرائط</a>
+      <a href="phys5-lesson3-videos.html">🎥 فيديو</a>
+      <a href="phys5-lesson3-activities.html">📝 أنشطة</a>
+    </div>
+  </div>
+  <div class="lesson-box">
+    <h3>الدرس 4</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys5-lesson4-lessons.html">📘 الدروس</a>
+      <a href="phys5-lesson4-games.html">🎮 ألعاب</a>
+      <a href="phys5-lesson4-maps.html">🗺️ خرائط</a>
+      <a href="phys5-lesson4-videos.html">🎥 فيديو</a>
+      <a href="phys5-lesson4-activities.html">📝 أنشطة</a>
+    </div>
+   </div>
+ <div class="lesson-box">
+    <h3>الدرس 5</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys5-lesson5-lessons.html">📘 الدروس</a>
+      <a href="phys5-lesson5-games.html">🎮 ألعاب</a>
+      <a href="phys5-lesson5-maps.html">🗺️ خرائط</a>
+      <a href="phys5-lesson5-videos.html">🎥 فيديو</a>
+      <a href="phys5-lesson5-activities.html">📝 أنشطة</a>
+    </div>
+   </div>
+ <div class="lesson-box">
+    <h3>الدرس 6</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys5-lesson6-lessons.html">📘 الدروس</a>
+      <a href="phys5-lesson6-games.html">🎮 ألعاب</a>
+      <a href="phys5-lesson6-maps.html">🗺️ خرائط</a>
+      <a href="phys5-lesson6-videos.html">🎥 فيديو</a>
+      <a href="phys5-lesson6-activities.html">📝 أنشطة</a>
+    </div>
+   </div>
+ <div class="lesson-box">
+    <h3>الدرس 7</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys5-lesson7-lessons.html">📘 الدروس</a>
+      <a href="phys5-lesson7-games.html">🎮 ألعاب</a>
+      <a href="phys5-lesson7-maps.html">🗺️ خرائط</a>
+      <a href="phys5-lesson7-videos.html">🎥 فيديو</a>
+      <a href="phys5-lesson7-activities.html">📝 أنشطة</a>
+    </div>
+   </div>
+ <div class="lesson-box">
+    <h3>الدرس 8</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys5-lesson8-lessons.html">📘 الدروس</a>
+      <a href="phys5-lesson8-games.html">🎮 ألعاب</a>
+      <a href="phys5-lesson8-maps.html">🗺️ خرائط</a>
+      <a href="phys5-lesson8-videos.html">🎥 فيديو</a>
+      <a href="phys5-lesson8-activities.html">📝 أنشطة</a>
+    </div>
+   </div>
+ <div class="lesson-box">
+    <h3>الدرس 9</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys5-lesson9-lessons.html">📘 الدروس</a>
+      <a href="phys5-lesson9-games.html">🎮 ألعاب</a>
+      <a href="phys5-lesson9-maps.html">🗺️ خرائط</a>
+      <a href="phys5-lesson9-videos.html">🎥 فيديو</a>
+      <a href="phys5-lesson9-activities.html">📝 أنشطة</a>
+    </div>
+   </div>
+ <div class="lesson-box">
+    <h3>الدرس 10</h3>
+    <div class="arrow" onclick="toggleCategories(this)">➤</div>
+    <div class="categories" style="display:none;">
+      <a href="phys5-lesson10-lessons.html">📘 الدروس</a>
+      <a href="phys5-lesson10-games.html">🎮 ألعاب</a>
+      <a href="phys5-lesson10-maps.html">🗺️ خرائط</a>
+      <a href="phys5-lesson10-videos.html">🎥 فيديو</a>
+      <a href="phys5-lesson10-activities.html">📝 أنشطة</a>
+    </div>
+   </div>
+</div>
+
+
+<script>
+  function toggleCourse(id) {
+    document.querySelectorAll('.lessons-container').forEach(c => c.style.display = 'none');
+    const selected = document.getElementById(id);
+    if (selected) selected.style.display = 'block';
+  }
+
+  function toggleCategories(arrow) {
+    const categories = arrow.nextElementSibling;
+    if (categories.style.display === 'block') {
+      categories.style.display = 'none';
+      arrow.textContent = '➤';
+    } else {
+      categories.style.display = 'block';
+      arrow.textContent = '▼';
+    }
+  }
+</script>
+
+</body>
+</html>
+
